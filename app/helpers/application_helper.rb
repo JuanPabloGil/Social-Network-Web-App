@@ -19,7 +19,12 @@ module ApplicationHelper
   def request_friend_btn(user)
     friend_request_exist = Friendship.find_by(user_id: current_user.id , friend_id: user.id)
     if friend_request_exist
-      'Pending request...'
+      if friend_request_exist.confirmed == true
+        link_to('Delete Friend', delete_friend_path(user_id: current_user.id, friend_id: user.id), method: :post)
+      else
+        'Pending request...'
+      end
+
     else
       if current_user.id != user.id
         link_to('Request Friendship', user_friendships_path(user_id: current_user.id, friend_id: user.id), method: :post)
@@ -28,6 +33,15 @@ module ApplicationHelper
   end
 
   def accept_friend_btn(user)
-    current_user.confirm_friend(user)
+    friend_request_exist = Friendship.find_by(user_id:  user.id, friend_id: current_user.id)
+    link_to('Acept friend', acept_friend_path(user_id: current_user.id, friend_id: user.id))
+  end
+
+  def notifications
+    if current_user.friend_requests.size >= 1
+      current_user.friend_requests.size
+    else
+      "0"
+    end
   end
 end
