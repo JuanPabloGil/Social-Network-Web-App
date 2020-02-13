@@ -17,4 +17,12 @@ class FriendshipsController < ApplicationController
       redirect_to rooth_path, alert: 'You cannot Delete this friend '
     end
   end
+
+  def update
+    @friendship = Friendship.find_by(user_id: params[:friend_id], friend_id:  params[:user_id])
+    @friendship.confirmed = true
+    if @friendship.save
+      redirect_to root_path, notice: 'Now you and him are firends'
+    end
+  end
 end
