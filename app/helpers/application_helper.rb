@@ -16,12 +16,18 @@ module ApplicationHelper
     end
   end
 
-  def add_friend_btn(user)
-    frnd = Friendship.find_by(user_id: current_user.id, friend_id: user.id)
-    if frnd
-      link_to('Delete firend', user_friendship_path(user_id: current_user.id, friend_id: user.id), method: :delete)
+  def request_friend_btn(user)
+    friend_request_exist = Friendship.find_by(user_id: current_user.id , friend_id: user.id)
+    if friend_request_exist
+      'Pending request...'
     else
-      link_to('Request Friend', user_friendships_path(user_id: current_user.id, friend_id: user.id), method: :post) if  current_user.id != user.id
+      if current_user.id != user.id
+        link_to('Request Friendship', user_friendships_path(user_id: current_user.id, friend_id: user.id), method: :post)
+      end
     end
+  end
+
+  def accept_friend_btn(user)
+    current_user.confirm_friend(user)
   end
 end
