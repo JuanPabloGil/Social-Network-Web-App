@@ -1,6 +1,17 @@
 <section class="user-section">
-  <h2><%= "Name: #{@user.name}" %></h2>
-  <%= add_friend_btn(@user) %>
+  <h2><%= "Name: #{@user.name}" %></h2><span class="btn">  <%= request_friend_btn(@user) %></span><hr>
+
+  <h2>Friends: </h2><br>
+  <% @friends.each do |friend| %>
+    <li><%= friend.name %></li><br>
+  <% end %>
+  <hr>
+
+  <% @requests.each do |reqst| %>
+  Friend request form:<%= reqst.name %>
+  <% end %>
+
+
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
