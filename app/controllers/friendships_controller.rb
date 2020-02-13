@@ -2,7 +2,7 @@ class FriendshipsController < ApplicationController
   def create
     @friend = Friendship.new(user_id: params[:user_id], friend_id: params[:friend_id])
     if @friend.save
-      redirect_to root_path, notice: 'Request send'
+      redirect_to root_path, notice: 'Request sent'
     else
       redirect_to root_path, alert: 'Error on sending request'
     end
