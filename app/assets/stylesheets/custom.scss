@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
 
-$primary-color-dark: #689f38;
-$primary-color: #8bc34a;
-$primary-color-light: #dcedc8;
-$primary-color-text: #212121;
+$primary-color-dark: #34558b;
+$primary-color: #34558b;
+$primary-color-light: #34558b;
+$primary-color-text: #34558b;
 $divider-color: #bdbdbd;
 
 * {
@@ -40,7 +40,7 @@ a {
   justify-content: space-between;
   padding: 16px 48px;
   background-color: $primary-color-dark;
-  color: $primary-color-light;
+  color: #fff;
 
   .menu {
     width: 80%;
@@ -60,7 +60,7 @@ a {
 }
 
 .nav a {
-  color: $primary-color-light;
+  color: #fff;
   text-transform: uppercase;
   font-weight: 900;
 }
@@ -116,7 +116,8 @@ form {
       border: 1px solid $divider-color;
       border-radius: 4px;
       padding: 8px;
-      background-color: $primary-color-light;
+      background-color: #fff;
+
     }
 
     input[type="checkbox"] {
@@ -135,7 +136,7 @@ form {
     border: none;
     border-radius: 4px;
     background-color: $primary-color-dark;
-    color: $primary-color-light;
+    color: #fff;
     text-transform: uppercase;
     font-weight: 900;
   }
