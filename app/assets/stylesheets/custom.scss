@@ -284,6 +284,17 @@ form {
   }
 }
 
+.btn-primary {
+  padding: 5px;
+  background:$primary-color-dark;
+  border-radius: 3px;
+  margin-top: 5px;
+  color:white;
+  a {
+    color: white;
+  }
+}
+
 .users-section {
   width: 100%;
   margin: 10px;
