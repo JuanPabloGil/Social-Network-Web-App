@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   devise_for :users
+  get '/notifications', to: 'users#notify'
+  get '/acept_friend',  to: 'friendships#update'
+  post '/delete_friend', to: 'friendships#destroy'
 
-  resources :users, only: [:index, :show] do
-    resources :friendships, only: [:create, :destroy ]
+  resources :users, only: [:index, :show, :notify] do
+    resources :friendships, only: [:create, :destroy, :update ]
   end
 
   resources :posts, only: [:index, :create] do
