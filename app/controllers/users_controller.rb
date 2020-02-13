@@ -8,5 +8,13 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.ordered_by_most_recent
+    @friends = @user.friends
+    
+    if @user == current_user
+      @requests = @user.friend_requests
+    else
+      @requests = []
+    end
   end
+
 end
