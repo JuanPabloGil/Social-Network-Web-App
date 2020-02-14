@@ -2,5 +2,5 @@
 
 <h4>Friend request form:</h4>
 <% @requests.each do |reqst| %>
-<br><%= reqst.name %> <%= accept_friend_btn(reqst) %>
+<br><%= reqst.name %> <%= accept_friend_btn(reqst) %> | <%= decline_friend_btn(reqst) %>
 <% end %>

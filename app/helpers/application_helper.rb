@@ -28,12 +28,15 @@ module ApplicationHelper
 
     elsif current_user.id != user.id
       link_to('Request Friendship', user_friendships_path(user_id: current_user.id, friend_id: user.id), method: :post)
-
     end
   end
 
   def accept_friend_btn(user)
     link_to('Acept friend', acept_friend_path(user_id: current_user.id, friend_id: user.id))
+  end
+
+  def decline_friend_btn(user)
+    link_to('Decline', delete_friend_path(user_id: user.id, friend_id: current_user.id), method: :post)
   end
 
   def notifications

@@ -12,9 +12,13 @@ class FriendshipsController < ApplicationController
     frnd = Friendship.find_by(user_id: params[:user_id], friend_id: params[:friend_id])
     if frnd
       frnd.destroy
-      redirect_to root_path, notice: 'Friend Deleted'
+      if frnd.confirmed == true
+        redirect_to root_path, notice: 'Friend Deleted'
+      else
+        redirect_to root_path, notice: 'Request declined '
+      end
     else
-      redirect_to rooth_path, alert: 'You cannot Delete this friend '
+      redirect_to root_path, alert: 'You cannot Delete this friend '
     end
   end
 
