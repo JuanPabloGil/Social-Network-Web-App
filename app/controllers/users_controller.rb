@@ -9,8 +9,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @posts = @user.posts.ordered_by_most_recent
     @friends = @user.friends
-
-
   end
 
   def notify
@@ -19,8 +17,7 @@ class UsersController < ApplicationController
     if @requests.size >= 1
       @requests
     else
-      "You dont have notifications"
+      'You dont have notifications'
     end
   end
-
 end

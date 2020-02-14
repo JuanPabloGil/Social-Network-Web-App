@@ -19,10 +19,8 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-    @friendship = Friendship.find_by(user_id: params[:friend_id], friend_id:  params[:user_id])
+    @friendship = Friendship.find_by(user_id: params[:friend_id], friend_id: params[:user_id])
     @friendship.confirmed = true
-    if @friendship.save
-      redirect_to root_path, notice: 'Now you and him are firends'
-    end
+    redirect_to root_path, notice: 'Now you and him are firends' if @friendship.save
   end
 end

@@ -1,21 +1,23 @@
-<section class="user-section">
-  <h3><%= "Name: #{@user.name}" %></h3>
-  <div>
-    <span class="btn-primary" >  <%= request_friend_btn(@user) %></span>
-  </div>
 
+<div class="text-center">
+  <h3><%= fa_icon "address-book"%> <%= @user.name %></h3>
+  <%= request_friend_btn(@user) %>
+</div>
+
+<hr>
+
+<div>
   <h2>Friends: </h2><br>
   <% @friends.each do |friend| %>
-  <li><%= friend.name %></li><br>
+  <%= link_to friend.name, user_path(friend) %><br>
   <% end %>
-  <hr>
+</div>
 
+<hr>
 
-
-  <article class="timeline">
-    <h3>Recent posts:</h3>
-    <ul class="posts">
-      <%= render @posts %>
-    </ul>
-  </article>
-</section>
+<article class="timeline">
+  <h3>Recent posts:</h3>
+  <ul class="posts">
+    <%= render @posts %>
+  </ul>
+</article>
