@@ -5,7 +5,7 @@
       <li>
         <%= user.name %>
         <span class="profile-link">
-          <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+          <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %> | <%= request_friend_btn(user) %>
         </span>
       </li>
     <% end %>
