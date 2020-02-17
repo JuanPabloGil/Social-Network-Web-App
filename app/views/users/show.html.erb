@@ -1,0 +1,23 @@
+
+<div class="text-center">
+  <h3><%= fa_icon "address-book"%> <%= @user.name %></h3>
+  <%= request_friend_btn(@user) %>
+</div>
+
+<hr>
+
+<div>
+  <h2>Friends: </h2><br>
+  <% @friends.each do |friend| %>
+  <%= link_to friend.name, user_path(friend) %><br>
+  <% end %>
+</div>
+
+<hr>
+
+<article class="timeline">
+  <h3>Recent posts:</h3>
+  <ul class="posts">
+    <%= render 'users/myposts' %>
+  </ul>
+</article>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RorSocialScaffold</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <nav class="nav">
+    <%= link_to 'Stay in touch', root_path %>
+    <div class="menu">
+      <!-- <div class="menu-item">
+        <%= menu_link_to 'Timeline', posts_path %>
+      </div> -->
+      <div class="menu-item">
+        <%= menu_link_to 'Find a Friends', users_path %>
+      </div>
+      <div class="manu-item">
+        <%= menu_link_to "Profile", current_user %>
+      </div>
+    </div>
+    <% if current_user %>
+    <%= notifications  %>
+    <%= link_to (fa_icon "bell"), notifications_path %>
+
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <% else %>
+    <%= link_to 'Sign in', user_session_path %>
+    <% end %>
+  </nav>
+
+
+  <% if notice.present? %>
+  <div class="notice">
+    <p> <%= notice %> </p>
+  </div>
+  <% end %>
+  <% if alert.present? %>
+  <div class="alert">
+    <p> <%= alert %> </p>
+  </div>
+  <% end %>
+  <div class="container mt-3">
+    <%= yield %>
+  </div>
+</body>
+</html>
