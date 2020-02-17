@@ -17,9 +17,8 @@ RSpec.describe Post, type: :model do
 
   it 'Expect invalid content of post (too long ) ' do
     user2.save
-    post.content =  "a" * 1001
+    post.content = 'a' * 1001
     post.save
     expect(post).not_to be_valid
   end
-
 end

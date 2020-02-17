@@ -5,7 +5,6 @@ RSpec.describe User, type: :model do
   let(:user2) { User.new(id: 2, name: 'user2', email: 'user2@example.com', password: '12345678') }
   let(:friendship) { Friendship.new(user_id: user.id, friend_id: user2.id, confirmed: false) }
 
-
   it 'Check if is a good relationship valid' do
     user.save
     user2.save

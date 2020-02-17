@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   let(:user2) { User.new(id: 2, name: 'user2istolong', email: 'user2@example.com', password: '12345678') }
 
   it 'Check for valid user structure ' do
@@ -20,5 +19,4 @@ RSpec.describe User, type: :model do
     user2.save
     expect(user2).not_to be_valid
   end
-
 end
