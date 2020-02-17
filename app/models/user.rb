@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+  :recoverable, :rememberable, :validatable
 
   validates :name, presence: true, length: { maximum: 20 }
 
@@ -37,5 +37,11 @@ class User < ApplicationRecord
 
   def friend?(user)
     friends.include?(user)
+  end
+
+  def posts_friends
+    friends = current_user.friends
+    posts = friends.map{|user| user.posts }.compact
+    posts
   end
 end
