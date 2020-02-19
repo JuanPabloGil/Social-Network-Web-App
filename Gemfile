@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+gem 'activerecord-session_store'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.4.1'
 gem 'coffee-rails', '~> 4.2'
@@ -10,6 +11,8 @@ gem 'devise'
 gem 'faker'
 gem 'font-awesome-rails'
 gem 'jbuilder', '~> 2.5'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.4'
