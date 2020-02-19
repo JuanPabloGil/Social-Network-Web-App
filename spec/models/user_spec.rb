@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'Check for invalid user name size ' do
-    user2.name = 'abcdfghijklmnopqrstuvwxyzzyxwvutsrqoinm'
+    user2.name = 'abcdfghijklmnopqrstuvwxyzzyxwvutsrqoinmqwwqopidjqpoiwdjqopiwdh8h1982mdh09hmqumdqiwiuwqdhqiouwdhmqwiudmiowdu'
     user2.save
     expect(user2).not_to be_valid
   end
