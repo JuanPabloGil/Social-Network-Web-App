@@ -10,6 +10,9 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX }
 
+
+  validates :name, presence: true, length: { maximum: 50 }
+  
   has_many :posts
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
