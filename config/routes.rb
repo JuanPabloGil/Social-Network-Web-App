@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  devise_for :users
+  devise_for :users, controllers: {omniauth_callbacks: 'omniauth'}
   get '/notifications', to: 'users#notify'
   get '/acept_friend',  to: 'friendships#update'
   post '/delete_friend', to: 'friendships#destroy'
