@@ -1,7 +1,7 @@
 # Social media app with Ruby on Rails
 
 <p align="center">
-    <img src="/main-ns.png">
+    <img src="/main-sn.png">
 </p>
 
 This project its a template to create a social network with autentication with Facebook, notification system, friendship system, and Post System.
