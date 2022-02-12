@@ -139,7 +139,8 @@ GEM
       ast (~> 2.4.0)
     pg (1.2.2)
     popper_js (1.16.0)
-    puma (3.12.4)
+    puma (4.3.11)
+      nio4r (~> 2.0)
     rack (2.1.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -274,7 +275,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   pg (>= 0.18, < 2.0)
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (~> 5.2.4)
   rspec
   rspec-rails
